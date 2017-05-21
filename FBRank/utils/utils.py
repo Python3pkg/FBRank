@@ -26,7 +26,7 @@ def check_before(attr='name'):
         @wraps(func)
         def wrapped(self, *args, **kwargs):
             # print(func.__class__.__name__)
-            if (getattr(self, attr).lower() not in club_transformat.keys()):
+            if (getattr(self, attr).lower() not in list(club_transformat.keys())):
                 raise NotSupprotedYetException
             return func(self, *args, **kwargs)
 

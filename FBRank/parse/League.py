@@ -79,17 +79,17 @@ def show_news(news_dict):
     :return: None,just print
     """
     table = PrettyTable(["ID", "链接"])
-    for id, (_, title) in news_dict.items():
+    for id, (_, title) in list(news_dict.items()):
         table.add_row([id, title])
     print(table)
     while True:
-        prompt = input('------请输入选择的 id 查看新闻具体内容，或者点击 q 退出------\n')
+        prompt = eval(input('------请输入选择的 id 查看新闻具体内容，或者点击 q 退出------\n'))
         if prompt == 'q':
             return '点击结束'
-        elif prompt not in news_dict.keys():
+        elif prompt not in list(news_dict.keys()):
             print('请输入上述列表中的一个 id')
         else:
-            print(get_news_from_index(news_dict[prompt][0]))
+            print((get_news_from_index(news_dict[prompt][0])))
 
 
 def get_news_from_index(url):

@@ -22,7 +22,7 @@ class Club(object):
     def __init__(self, intro_name):
         self.name = intro_name
         # if use soup as property,then when try to get attribute,every hit will ask for one web url
-        if self.name.lower() in league_transformat.keys():
+        if self.name.lower() in list(league_transformat.keys()):
             self.web_url = ''
             self.soup = BeautifulSoup(requests.get(self.web_url).text)
 

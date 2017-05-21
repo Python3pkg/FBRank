@@ -61,6 +61,6 @@ if __name__ == '__main__':
     parser.add_argument("-l", "--league", dest="league")
     parser.add_argument("ask", default="rank", choices=["rank", "info", "news"])
     args = parser.parse_args()
-    print(vars(args))
+    print((vars(args)))
 
     test()

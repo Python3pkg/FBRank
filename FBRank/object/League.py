@@ -18,7 +18,7 @@ class League(object):
         return self._get_news()
 
     def _get_name(self, pass_name):
-        for league_list in league_transformat.keys():
+        for league_list in list(league_transformat.keys()):
             if pass_name in league_list or pass_name.lower() in league_list:
                 return league_transformat.get(league_list)
 
